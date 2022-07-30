@@ -1,6 +1,6 @@
 const express = require('express');
+const tableRouter = require('./routes/table.routes');
 
-const PORT = process.env.PORT || 8080;
 
 const app = express();
 
@@ -18,11 +18,15 @@ app.use(express.json());
 
 
 // routes
+app.use('/api/data', tableRouter);
+
 app.get('/', (req, res) => {
     res.send('START route');
 });
 
 
 // connection
+const PORT = process.env.PORT || 8080;
+
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
 
