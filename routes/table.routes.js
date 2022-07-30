@@ -1,6 +1,7 @@
-const express = require("express");
-const router = express.Router();
+const { Router } = require('express');
 const db = require('../db');
+
+const router = Router();
 
 router.get('/', async (req, res) => {
     try {
