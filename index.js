@@ -18,14 +18,15 @@ app.use(express.json());
 
 
 // routes
-app.use('/api/data', tableRouter);
-
 app.get('/', (req, res) => {
     res.send('START route');
 });
 
+app.use('/api/data', tableRouter);
+
+
 
 // connection
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8000;
 
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
